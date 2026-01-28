@@ -78,7 +78,7 @@ const HeroSection = () => {
             variants={subtextVariants}
             className="sl-body max-w-2xl text-sl-text-secondary"
           >
-            Survival Lab is for people who already work hard — and still feel lost.
+            Survival Lab is for people who already work hard and still feel lost.
           </motion.p>
         </motion.div>
       </div>
