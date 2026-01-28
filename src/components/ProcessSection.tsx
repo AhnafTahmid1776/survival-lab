@@ -56,8 +56,8 @@ const ProcessSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="sl-space-block"
         >
-          <p className="sl-caption sl-space-element">Process</p>
-          <h2 className="sl-heading-lg">
+          <p className="sl-caption sl-space-element text-sl-moss-light">Process</p>
+          <h2 className="sl-heading-lg sl-text-glow cursor-default">
             How it works
           </h2>
         </motion.div>
@@ -78,15 +78,15 @@ const ProcessSection = () => {
               <motion.div
                 key={index}
                 variants={stepVariants}
-                className="relative pl-8 md:pl-20"
+                className="relative pl-8 md:pl-20 group"
               >
                 {/* Number indicator */}
-                <div className="absolute left-0 md:left-8 -translate-x-1/2 w-2 h-2 rounded-full bg-sl-accent" />
+                <div className="absolute left-0 md:left-8 -translate-x-1/2 w-2 h-2 rounded-full bg-sl-accent group-hover:shadow-[0_0_10px_hsl(42_50%_45%/0.6)] transition-shadow duration-300" />
                 
                 {/* Content */}
                 <div className="space-y-2">
                   <p className="sl-caption sl-accent-text">{step.number}</p>
-                  <h3 className="sl-heading-md">{step.title}</h3>
+                  <h3 className="sl-heading-md sl-text-hover cursor-default">{step.title}</h3>
                   <p className="sl-body-sm">{step.description}</p>
                 </div>
               </motion.div>

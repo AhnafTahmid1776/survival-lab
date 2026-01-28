@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   const subtextVariants = {
     hidden: { opacity: 0 },
-    visible: {
+    visible: { 
       opacity: 1,
       transition: {
         duration: 1.2,
@@ -45,7 +45,15 @@ const HeroSection = () => {
 
   return (
     <section className="sl-section relative overflow-hidden">
-      <div className="sl-container">
+      {/* Subtle jungle atmosphere */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          background: "radial-gradient(ellipse at 20% 80%, hsl(120 20% 8%) 0%, transparent 50%)",
+        }}
+      />
+      
+      <div className="sl-container relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -58,7 +66,7 @@ const HeroSection = () => {
               <motion.h1
                 key={index}
                 variants={lineVariants}
-                className="sl-heading-xl mb-2"
+                className="sl-heading-xl mb-2 sl-text-glow cursor-default"
               >
                 {line}
               </motion.h1>
@@ -79,7 +87,7 @@ const HeroSection = () => {
       <div 
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{
-          background: "linear-gradient(to top, hsl(0 0% 3%), transparent)",
+          background: "linear-gradient(to top, hsl(150 25% 3%), transparent)",
         }}
       />
     </section>
