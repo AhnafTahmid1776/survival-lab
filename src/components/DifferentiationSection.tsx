@@ -15,7 +15,7 @@ const DifferentiationSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="sl-heading-lg sl-space-block sl-text-glow cursor-default"
         >
-          Survival Lab is not an ML course.
+          Survival Lab is not a AI/ML course at all.
         </motion.h2>
 
         {/* Three column layout */}
