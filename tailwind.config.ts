@@ -47,16 +47,32 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Survival Lab custom colors
+        sl: {
+          charcoal: {
+            deep: "hsl(var(--sl-charcoal-deep))",
+            DEFAULT: "hsl(var(--sl-charcoal))",
+            light: "hsl(var(--sl-charcoal-light))",
+            surface: "hsl(var(--sl-charcoal-surface))",
+          },
+          text: {
+            primary: "hsl(var(--sl-text-primary))",
+            secondary: "hsl(var(--sl-text-secondary))",
+            muted: "hsl(var(--sl-text-muted))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--sl-accent))",
+            muted: "hsl(var(--sl-accent-muted))",
+          },
+          divider: "hsl(var(--sl-divider))",
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+      },
+      fontSize: {
+        "display": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-sm": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +81,34 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-in-slow": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-slow": "fade-in-slow 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+      },
+      transitionDuration: {
+        "slow": "1200ms",
+        "medium": "800ms",
+      },
+      transitionTimingFunction: {
+        "sl": "cubic-bezier(0.25, 0.1, 0.25, 1)",
       },
     },
   },
