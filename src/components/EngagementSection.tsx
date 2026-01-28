@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_LINK = "https://wa.me/61400000000"; // Replace with actual WhatsApp number
+const WHATSAPP_NUMBER = "+8801648904445";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`;
 
 const EngagementSection = () => {
   return (
@@ -14,7 +16,7 @@ const EngagementSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="sl-space-block"
         >
-          <h2 className="sl-heading-lg">
+          <h2 className="sl-heading-lg sl-text-glow cursor-default">
             There is no price on this page.
           </h2>
         </motion.div>
@@ -29,34 +31,35 @@ const EngagementSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="sl-card flex flex-col"
           >
-            <p className="sl-caption sl-space-element">Minimum Engagement</p>
-            <h3 className="sl-heading-md mb-4">
+            <p className="sl-caption sl-space-element text-sl-moss-light">Minimum Engagement</p>
+            <h3 className="sl-heading-md mb-4 sl-text-hover cursor-default">
               For people who need direction, not motivation.
             </h3>
             
             <div className="flex-1">
               <ul className="space-y-3 mb-8">
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Diagnostic</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Diagnostic</span>
                 </li>
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Structure</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Structure</span>
                 </li>
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Clear execution window</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Clear execution window</span>
                 </li>
               </ul>
             </div>
 
             <a
-              href={WHATSAPP_LINK}
+              href={`${WHATSAPP_LINK}?text=Hi, I'm interested in the Minimum Engagement option at Survival Lab.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="sl-button w-full text-center"
+              className="sl-button-whatsapp w-full"
             >
+              <MessageCircle size={18} />
               Request details on WhatsApp
             </a>
           </motion.div>
@@ -70,33 +73,34 @@ const EngagementSection = () => {
             className="sl-card-highlighted flex flex-col"
           >
             <p className="sl-caption sl-accent-text sl-space-element">Maximum Engagement</p>
-            <h3 className="sl-heading-md mb-4">
+            <h3 className="sl-heading-md mb-4 sl-text-hover cursor-default">
               For people navigating high-stakes transitions.
             </h3>
             
             <div className="flex-1">
               <ul className="space-y-3 mb-8">
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Everything above</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Everything above</span>
                 </li>
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Ongoing feedback</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Ongoing feedback</span>
                 </li>
-                <li className="sl-body-sm flex items-start gap-3">
-                  <span className="text-sl-accent mt-1">—</span>
-                  <span>Decision-level guidance</span>
+                <li className="sl-body-sm flex items-start gap-3 group">
+                  <span className="text-sl-accent mt-1 group-hover:text-sl-accent-glow transition-colors">—</span>
+                  <span className="group-hover:text-sl-text-secondary transition-colors">Decision-level guidance</span>
                 </li>
               </ul>
             </div>
 
             <a
-              href={WHATSAPP_LINK}
+              href={`${WHATSAPP_LINK}?text=Hi, I'm interested in the Maximum Engagement option at Survival Lab. I'd like to check my eligibility.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="sl-button-primary w-full text-center"
+              className="sl-button-whatsapp w-full"
             >
+              <MessageCircle size={18} />
               Request eligibility on WhatsApp
             </a>
           </motion.div>

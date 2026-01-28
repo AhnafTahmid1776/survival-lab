@@ -47,13 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Survival Lab custom colors
+        // Survival Lab jungle colors
         sl: {
-          charcoal: {
-            deep: "hsl(var(--sl-charcoal-deep))",
-            DEFAULT: "hsl(var(--sl-charcoal))",
-            light: "hsl(var(--sl-charcoal-light))",
-            surface: "hsl(var(--sl-charcoal-surface))",
+          jungle: {
+            deep: "hsl(var(--sl-jungle-deep))",
+            DEFAULT: "hsl(var(--sl-jungle))",
+            light: "hsl(var(--sl-jungle-light))",
+            surface: "hsl(var(--sl-jungle-surface))",
           },
           text: {
             primary: "hsl(var(--sl-text-primary))",
@@ -63,6 +63,11 @@ export default {
           accent: {
             DEFAULT: "hsl(var(--sl-accent))",
             muted: "hsl(var(--sl-accent-muted))",
+            glow: "hsl(var(--sl-accent-glow))",
+          },
+          moss: {
+            DEFAULT: "hsl(var(--sl-moss))",
+            light: "hsl(var(--sl-moss-light))",
           },
           divider: "hsl(var(--sl-divider))",
         },
@@ -96,12 +101,17 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-slow": "fade-in-slow 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
         "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
       },
       transitionDuration: {
         "slow": "1200ms",

@@ -25,10 +25,13 @@ const Node = ({ position, targetPosition, progress, delay }: NodeProps) => {
     }
   });
 
+  // Jungle-themed colors - mossy green to gold
+  const color = adjustedProgress > 0.5 ? "#8B7355" : "#3D5A3D";
+
   return (
     <mesh ref={meshRef} position={[currentX, currentY, currentZ]}>
       <sphereGeometry args={[0.08, 16, 16]} />
-      <meshBasicMaterial color="#8B7355" transparent opacity={0.6 + adjustedProgress * 0.4} />
+      <meshBasicMaterial color={color} transparent opacity={0.6 + adjustedProgress * 0.4} />
     </mesh>
   );
 };
@@ -41,14 +44,16 @@ interface LineProps {
 
 const ConnectionLine = ({ start, end, progress }: LineProps) => {
   const points = useMemo(() => [start, end], [start, end]);
+  // Transition from moss green to gold
+  const color = progress > 0.5 ? "#8B7355" : "#4A6741";
 
   return (
     <Line
       points={points}
-      color="#8B7355"
+      color={color}
       lineWidth={1}
       transparent
-      opacity={progress * 0.3}
+      opacity={progress * 0.4}
     />
   );
 };

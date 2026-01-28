@@ -58,7 +58,7 @@ const ProblemSection = () => {
                 className="group"
               >
                 <p className="sl-body">
-                  <span className="text-sl-text-primary">{problem.action}</span>
+                  <span className="text-sl-text-primary sl-text-hover cursor-default">{problem.action}</span>
                   <span className="mx-3 text-sl-text-muted">→</span>
                   <span className="sl-accent-text">{problem.result}</span>
                 </p>

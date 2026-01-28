@@ -2,62 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Survival Lab Design System
-   A research lab aesthetic: calm, minimal, authoritative
+/* Survival Lab - Jungle Theme Design System
+   Deep forest aesthetic: dark, primal, authoritative
    Colors in HSL format only
 */
 
 @layer base {
   :root {
-    /* Core palette - Dark authority theme */
-    --background: 0 0% 5%;
-    --foreground: 40 10% 90%;
+    /* Core palette - Deep jungle theme */
+    --background: 150 20% 4%;
+    --foreground: 45 20% 88%;
     
-    --card: 0 0% 7%;
-    --card-foreground: 40 10% 90%;
+    --card: 150 15% 6%;
+    --card-foreground: 45 20% 88%;
     
-    --popover: 0 0% 7%;
-    --popover-foreground: 40 10% 90%;
+    --popover: 150 15% 6%;
+    --popover-foreground: 45 20% 88%;
     
-    /* Primary - Muted amber/ochre accent */
-    --primary: 35 30% 45%;
-    --primary-foreground: 0 0% 5%;
+    /* Primary - Muted gold/amber accent */
+    --primary: 42 45% 42%;
+    --primary-foreground: 150 20% 4%;
     
-    /* Secondary - Slightly lighter charcoal */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 10% 85%;
+    /* Secondary - Forest moss */
+    --secondary: 120 15% 12%;
+    --secondary-foreground: 45 15% 80%;
     
     /* Muted - For subdued text */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 150 10% 14%;
+    --muted-foreground: 45 10% 50%;
     
-    /* Accent - Same as primary for consistency */
-    --accent: 35 30% 45%;
-    --accent-foreground: 0 0% 5%;
+    /* Accent - Earthy gold */
+    --accent: 42 45% 42%;
+    --accent-foreground: 150 20% 4%;
     
     --destructive: 0 62% 30%;
-    --destructive-foreground: 40 10% 90%;
+    --destructive-foreground: 45 20% 88%;
     
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 35 30% 45%;
+    --border: 150 10% 15%;
+    --input: 150 10% 15%;
+    --ring: 42 45% 42%;
     
     --radius: 0.25rem;
     
-    /* Custom tokens for Survival Lab */
-    --sl-charcoal-deep: 0 0% 3%;
-    --sl-charcoal: 0 0% 5%;
-    --sl-charcoal-light: 0 0% 8%;
-    --sl-charcoal-surface: 0 0% 12%;
+    /* Custom Jungle tokens */
+    --sl-jungle-deep: 150 25% 3%;
+    --sl-jungle: 150 20% 5%;
+    --sl-jungle-light: 150 15% 8%;
+    --sl-jungle-surface: 150 12% 12%;
     
-    --sl-text-primary: 40 10% 90%;
-    --sl-text-secondary: 0 0% 65%;
-    --sl-text-muted: 0 0% 45%;
+    --sl-text-primary: 45 20% 88%;
+    --sl-text-secondary: 45 12% 65%;
+    --sl-text-muted: 45 8% 45%;
     
-    --sl-accent: 35 30% 45%;
-    --sl-accent-muted: 35 20% 35%;
+    --sl-accent: 42 50% 45%;
+    --sl-accent-muted: 42 35% 35%;
+    --sl-accent-glow: 42 60% 55%;
     
-    --sl-divider: 0 0% 18%;
+    --sl-moss: 120 20% 25%;
+    --sl-moss-light: 120 15% 35%;
+    
+    --sl-divider: 150 10% 18%;
     
     /* Animation timing */
     --sl-duration-slow: 1.2s;
@@ -67,25 +71,25 @@
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 40 10% 90%;
-    --card: 0 0% 7%;
-    --card-foreground: 40 10% 90%;
-    --popover: 0 0% 7%;
-    --popover-foreground: 40 10% 90%;
-    --primary: 35 30% 45%;
-    --primary-foreground: 0 0% 5%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 10% 85%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 50%;
-    --accent: 35 30% 45%;
-    --accent-foreground: 0 0% 5%;
+    --background: 150 20% 4%;
+    --foreground: 45 20% 88%;
+    --card: 150 15% 6%;
+    --card-foreground: 45 20% 88%;
+    --popover: 150 15% 6%;
+    --popover-foreground: 45 20% 88%;
+    --primary: 42 45% 42%;
+    --primary-foreground: 150 20% 4%;
+    --secondary: 120 15% 12%;
+    --secondary-foreground: 45 15% 80%;
+    --muted: 150 10% 14%;
+    --muted-foreground: 45 10% 50%;
+    --accent: 42 45% 42%;
+    --accent-foreground: 150 20% 4%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 40 10% 90%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 35 30% 45%;
+    --destructive-foreground: 45 20% 88%;
+    --border: 150 10% 15%;
+    --input: 150 10% 15%;
+    --ring: 42 45% 42%;
   }
 }
 
@@ -140,6 +144,30 @@
     color: hsl(var(--sl-text-muted));
   }
   
+  /* Interactive text effects */
+  .sl-text-hover {
+    @apply relative inline-block transition-colors duration-300;
+  }
+  
+  .sl-text-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px transition-all duration-500 ease-out;
+    background: hsl(var(--sl-accent));
+  }
+  
+  .sl-text-hover:hover {
+    color: hsl(var(--sl-accent));
+  }
+  
+  .sl-text-hover:hover::after {
+    @apply w-full;
+  }
+  
+  /* Glow effect on hover */
+  .sl-text-glow:hover {
+    text-shadow: 0 0 20px hsl(var(--sl-accent) / 0.4);
+  }
+  
   /* Accent text */
   .sl-accent-text {
     color: hsl(var(--sl-accent));
@@ -156,15 +184,25 @@
   
   /* Card styles */
   .sl-card {
-    @apply p-6 md:p-8;
-    background: hsl(var(--sl-charcoal-light));
+    @apply p-6 md:p-8 transition-all duration-500;
+    background: hsl(var(--sl-jungle-light));
     border: 1px solid hsl(var(--sl-divider));
   }
   
+  .sl-card:hover {
+    background: hsl(var(--sl-jungle-surface));
+    border-color: hsl(var(--sl-accent-muted) / 0.5);
+  }
+  
   .sl-card-highlighted {
-    @apply p-6 md:p-8;
-    background: hsl(var(--sl-charcoal-surface));
+    @apply p-6 md:p-8 transition-all duration-500;
+    background: hsl(var(--sl-jungle-surface));
     border: 1px solid hsl(var(--sl-accent-muted));
+  }
+  
+  .sl-card-highlighted:hover {
+    border-color: hsl(var(--sl-accent));
+    box-shadow: 0 0 30px hsl(var(--sl-accent) / 0.1);
   }
   
   /* Divider */
@@ -178,9 +216,9 @@
     background: hsl(var(--sl-divider));
   }
   
-  /* Button - minimal, serious */
+  /* Button - minimal, jungle */
   .sl-button {
-    @apply px-6 py-3 text-sm font-light tracking-wide transition-all duration-300;
+    @apply px-6 py-3 text-sm font-light tracking-wide transition-all duration-300 flex items-center justify-center gap-2;
     background: transparent;
     border: 1px solid hsl(var(--sl-divider));
     color: hsl(var(--sl-text-secondary));
@@ -189,11 +227,12 @@
   .sl-button:hover {
     border-color: hsl(var(--sl-accent-muted));
     color: hsl(var(--sl-text-primary));
+    background: hsl(var(--sl-jungle-surface));
   }
   
   .sl-button-primary {
-    @apply px-6 py-3 text-sm font-light tracking-wide transition-all duration-300;
-    background: hsl(var(--sl-charcoal-surface));
+    @apply px-6 py-3 text-sm font-light tracking-wide transition-all duration-300 flex items-center justify-center gap-2;
+    background: hsl(var(--sl-jungle-surface));
     border: 1px solid hsl(var(--sl-accent-muted));
     color: hsl(var(--sl-text-primary));
   }
@@ -201,6 +240,21 @@
   .sl-button-primary:hover {
     background: hsl(var(--sl-accent-muted));
     border-color: hsl(var(--sl-accent));
+    box-shadow: 0 0 20px hsl(var(--sl-accent) / 0.2);
+  }
+  
+  /* WhatsApp button specific */
+  .sl-button-whatsapp {
+    @apply px-6 py-3 text-sm font-light tracking-wide transition-all duration-300 flex items-center justify-center gap-3;
+    background: hsl(142 70% 25%);
+    border: 1px solid hsl(142 70% 35%);
+    color: hsl(0 0% 100%);
+  }
+  
+  .sl-button-whatsapp:hover {
+    background: hsl(142 70% 30%);
+    border-color: hsl(142 70% 45%);
+    box-shadow: 0 0 25px hsl(142 70% 35% / 0.4);
   }
 }
 

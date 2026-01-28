@@ -13,7 +13,7 @@ const DifferentiationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="sl-heading-lg sl-space-block"
+          className="sl-heading-lg sl-space-block sl-text-glow cursor-default"
         >
           Survival Lab is not an ML course.
         </motion.h2>
@@ -35,7 +35,7 @@ const DifferentiationSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
-                className="sl-body text-sl-text-muted"
+                className="sl-body text-sl-text-muted line-through decoration-sl-divider cursor-default hover:text-sl-text-secondary transition-colors duration-300"
               >
                 {item}
               </motion.p>
@@ -51,7 +51,7 @@ const DifferentiationSection = () => {
             className="hidden md:flex flex-col items-center gap-6 origin-center"
           >
             <div className="w-px h-32 bg-sl-divider" />
-            <p className="sl-caption text-center whitespace-nowrap rotate-0 md:-rotate-0">
+            <p className="sl-caption text-center whitespace-nowrap text-sl-accent">
               Most people stop here
             </p>
             <div className="w-px h-32 bg-sl-divider" />
@@ -66,7 +66,7 @@ const DifferentiationSection = () => {
             className="md:hidden flex items-center gap-4"
           >
             <div className="h-px flex-1 bg-sl-divider" />
-            <p className="sl-caption">Most people stop here</p>
+            <p className="sl-caption text-sl-accent">Most people stop here</p>
             <div className="h-px flex-1 bg-sl-divider" />
           </motion.div>
 
@@ -79,7 +79,7 @@ const DifferentiationSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 + index * 0.1, ease: "easeOut" }}
-                className="sl-body text-sl-text-primary"
+                className="sl-body text-sl-text-primary sl-text-hover cursor-default"
               >
                 {item}
               </motion.p>
