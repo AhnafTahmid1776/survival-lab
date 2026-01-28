@@ -22,7 +22,7 @@ const FilterSection = () => {
             Survival Lab is not for everyone.
           </h2>
           <p className="sl-body">
-            If you want shortcuts, templates, or validation — <span className="sl-accent-text">don't contact</span>.
+            If you want shortcuts, templates, or validation <span className="sl-accent-text">don't contact</span>.
           </p>
         </motion.div>
 
