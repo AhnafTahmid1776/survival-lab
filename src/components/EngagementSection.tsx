@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_NUMBER = "+8801648904445";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`;
+const WHATSAPP_LINK = `https://wa.me/8801648904445`;
 
 const EngagementSection = () => {
   return (
